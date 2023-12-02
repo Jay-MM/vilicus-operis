@@ -122,6 +122,11 @@ body {
   transform: translateX(-50%);
 }
 
+main {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .custom-card {
   border-color: var(--dark);
   color: var(--darkgrey);
@@ -165,6 +170,5 @@ body {
 
 #exit-btn:hover {
   color: var(--sangre);
-  font-weight: bolder;
-  font-size: large;
+  font-weight: 900;
 }
