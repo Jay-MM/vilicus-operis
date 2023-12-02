@@ -51,6 +51,17 @@ table {
 
 
 /* now we use our normal styles */
+
+/* adds custom colors */
+:root {
+  --dark: #111111;
+  --darkblue: rgb(24, 31, 42);
+  --light: #dddddd;
+  --bright: rgb(240, 255, 240);
+  --sangre: rgb(133, 0, 0);
+  --cielo: rgba(0, 89, 255, 0.217);
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -58,28 +69,76 @@ table {
 }
 
 body { 
-  background-color: #dadada;
+  background-color: var(--light);
 }
 
-.jumbotron { 
+.jumbotron {
+  position: relative;
   padding: 2rem;
-  background-color: #111111;
+  background-color: var(--dark);
 }
 
 .container {
   width: 99%;
-
 }
 
-.jumbotron .container { 
+.jumbotron .container {
   max-width: 100%;
-  background-color: rgb(24, 31, 42);
+  background-color: var(--darkblue);
+  position: relative;
 }
 
-.jumbotron h1, h2, #current-time { 
+.jumbotron h1, h2, #current-time {
   display: flex;
   justify-content: center;
-  color: #DDD;
+  color: var(--light);
   text-transform: uppercase;
   padding: .5rem;
+}
+
+/* Add parallel vertical lines */
+.jumbotron .container::before, .jumbotron .container::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1.5px;
+  background-color: var(--sangre);
+  bottom: 0;
+  right: 3.3rem;
+}
+
+/* Add perpendicular horizontal line */
+.jumbotron .container::before {
+  width: 100%;
+  height: .5px;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-footer {
+  background-color: var(--darkblue);
+
+}
+
+.custom-btn {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* adds styling for hover pseudoclass */
+.custom-btn:hover {
+  background-color: var(--bright);
+  color:var(--sangre) ;
+  font-weight: bolder;
+}
+
+#submit-btn:hover {
+  background-color: var(--cielo);
+}
+
+#exit-btn:hover {
+  color: var(--sangre);
+  font-weight: bolder;
+  font-size: large;
 }

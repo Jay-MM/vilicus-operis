@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- improves SEO -->
   <meta name="Description" content="Track and manage projects efficiently" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Project Manager</title>
 </head>
@@ -17,27 +17,81 @@
     <div class="container">
       <h1>Project Tracker</h1>
       <!-- uses ampersand html entity to ensure proper rendering of content-->
-      <h2>Current Date &amp; Time</h2>
+      <h2>Current Date &amp; Time : </h2>
       <br/>
       <span id="current-time">00:00:00</span>
     </div>
   </header>
 
   <main>
-    <div>
-      <section>
-        <div>
-          <h3></h3>
+    <div class="row">
+      <section class="col-12 col-md-4 col-lg-3">
+        <div class="card">
+          <h3 class="card-header">
+            Instructions
+          </h3>
+          <div class="card-body">
+            <div class="card-text">
+              Click the button below and fill out the following information:
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Project Name</li>
+            <li class="list-group-item">Project Type</li>
+            <li class="list-group-item">Due Date</li>
+            <li class="list-group-item">Hourly Rate</li>
+          </ul>
+          <div class="card-footer">
+            <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#project-modal">Add
+              Project</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12 col-md-8 col-lg-9">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Project Name</th>
+                <th scope="col">Project Type</th>
+                <th scope="col">Hourly Rate (💰)</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Days Until Due Date</th>
+                <th scope="col">Potential Total Earnings (💰)</th>
+                <th scope="col" class="p-3"></th>
+              </tr>
+            </thead>
+            <tbody id="project-display"></tbody>
+          </table>
         </div>
       </section>
     </div>
 
+    <div class="modal fade" id="project-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="project-modal-form" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="project-modal-form">What is this project about?</h1>
+            <button id="exit-btn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="submit-btn" type="submit" class="btn custom-btn">Submit Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
-
   </footer>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
