@@ -58,6 +58,7 @@ table {
   --darkblue: rgb(24, 31, 42);
   --light: #dddddd;
   --bright: rgb(240, 255, 240);
+  --cream: rgba(240, 240, 186, 0.295);
   --sangre: rgb(133, 0, 0);
   --cielo: rgba(0, 89, 255, 0.217);
 }
@@ -116,10 +117,25 @@ body {
   transform: translateX(-50%);
 }
 
-.card-footer {
-  background-color: var(--darkblue);
-
+.custom-card {
+  border-color: var(--dark);
 }
+/* only select the header and footer of the custom card element  */
+.custom-card .card-header,
+.custom-card .card-footer,
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  background-color: var(--darkblue);
+  color: var(--light);
+}
+
+
+.custom-card .card-body,
+.custom-modal .modal-body {
+  background-color: var(--cream);
+  color: var(--darkblue);
+}
+
 
 .custom-btn {
   background-color: var(--light);
