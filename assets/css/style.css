@@ -244,3 +244,7 @@ main {
   color: var(--sangre);
   font-size: 1.25rem;
 }
+
+.delete-project-btn {
+  cursor: pointer;
+}
