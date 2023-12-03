@@ -10,7 +10,9 @@ no instalation required
 
 Simply to the URL and start managing your projects efficiently!
 
+## ScreenCapture
 
+![demo video](<assets/Untitled design.gif>)
 
 ## Credits
 
@@ -28,7 +30,3 @@ This project uses the following technologies:
 ## License
 
 - [MIT](https://choosealicense.com/licenses/mit/)
-
-## ScreenCapture
-
-<video src="assets/Untitled_%20Dec%203,%202023%201_21%20AM.mp4" controls title="Title">
