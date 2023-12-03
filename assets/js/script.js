@@ -1,14 +1,19 @@
 // select elements from DOM
-const currentTimeEl = $('#current-time')
-const projectFormEl = $('#project-form')
-const projectNameInputEl = $('#project-name-input');
-const projectTypeInputEl = $('#project-type-input');
-const hourlyRateInputEl = $('#hourly-rate-input');
-const dueDateInputEl = $('#due-date-input')
+const currentTime = $('#current-time')
+const projectForm = $('#project-form')
+const projectNameInput = $('#project-name-input');
+const projectTypeInput = $('#project-type-input');
+const hourlyRateInput = $('#hourly-rate-input');
+const dueDateInput = $('#due-date-input')
 // handle current time display
-currentTimeEl.text(moment().format("ddd , MMMM Do YYYY, h:mm:ss a"))
+currentTime.text(moment().format("ddd , MMMM Do YYYY :: h:mm:ss a"))
 
-console.log(dueDateInputEl, projectFormEl, projectNameInputEl, projectTypeInputEl, hourlyRateInputEl )
+// datepicker using jqueryUI
+dueDateInput.datepicker({
+  showAnim: "slideDown",
+  dateFormat: "y-mm-d",
+  minDate: 1, 
+});
 // handleSubmit from modal form
 // handle parsing data unto DOM
 // handle project deletion 

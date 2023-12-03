@@ -102,6 +102,10 @@ body {
   font-size: 1.8rem;
 }
 
+#current-time {
+  text-transform: unset;
+}
+
 /* Add parallel vertical lines */
 .jumbotron .container::before, .jumbotron .container::after {
   content: '';
@@ -171,4 +175,56 @@ main {
 #exit-btn:hover {
   color: var(--sangre);
   font-weight: 900;
+}
+
+/* Add custom styles for the datepicker */
+.ui-datepicker {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--light); /* Set background color to white */
+  border: 1px solid var(--dark); /* Add a border for separation */
+}
+
+.ui-datepicker-header {
+  background-color: var(--darkblue);
+  color: var(--light);
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  background-color: var(--darkblue);
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+  color: var(--light);
+}
+
+.ui-datepicker-calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ui-datepicker-week-end {
+  color: var(--sangre);
+}
+
+
+.ui-datepicker-unselectable {
+  color: var(--darkgrey);
+}
+
+.ui-datepicker-current-day {
+  background-color: var(--dark);
+}
+
+.ui-datepicker-today {
+  font-weight: bold;
+  color: var(--sangre);
+}
+
+.ui-datepicker-buttonpane {
+  margin-top: 10px;
 }
