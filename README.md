@@ -8,7 +8,7 @@ no instalation required
 
 ## Usage
 
-Simply to the URL and start managing your projects efficiently!
+Simply [click here!](https://jay-mm.github.io/vilicus-operis/) to navigate to the live site and start managing your projects efficiently!
 
 ## ScreenCapture
 
