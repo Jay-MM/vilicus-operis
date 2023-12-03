@@ -10,7 +10,7 @@ const projectDisplay = $('#project-display')
 
 const today = dayjs()
 
-// handle appending data unto DOM
+// handle appending data into DOM
 function renderProjectData(name, type, hourlyRate, dueDate) {
   // show data in table
     // create a tr(table row)

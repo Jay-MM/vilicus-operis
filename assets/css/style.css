@@ -76,6 +76,15 @@ body {
   font-weight: 600;
 }
 
+thead tr th {
+  border: .25rem solid var(--dark);
+  background-color: var(--cream);
+}
+.custom-table tr th{
+  border: .15rem solid var(--dark);
+  font-size: 1.25rem;
+}
+
 .jumbotron {
   position: relative;
   padding: 2rem;
@@ -227,4 +236,11 @@ main {
 
 .ui-datepicker-buttonpane {
   margin-top: 10px;
+}
+
+.custom-table td{
+  border: .15rem solid var(--dark);
+  background-color: var(--cream);
+  color: var(--sangre);
+  font-size: 1.25rem;
 }
