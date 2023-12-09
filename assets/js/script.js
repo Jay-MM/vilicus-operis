@@ -10,6 +10,31 @@ const projectDisplay = $('#project-display')
 
 const today = dayjs()
 
+// Load existing data from local storage when the page loads
+$(document).ready(function() {
+  const savedProjects = JSON.parse(localStorage.getItem('projects')) || [];
+  savedProjects.forEach(function(project) {
+    renderProjectData(project.name, project.type, project.hourlyRate, project.dueDate);
+  });
+});
+
+// Function to save projects to local storage
+function saveProjectsToLocalStorage() {
+  const projects = [];
+  projectDisplay.find('tr').each(function() {
+    const cells = $(this).find('td');
+    const project = {
+      name: cells.eq(0).text(),
+      type: cells.eq(1).text(),
+      hourlyRate: parseFloat(cells.eq(2).text().replace('$', '')),
+      dueDate: cells.eq(3).text()
+    };
+    projects.push(project);
+  });
+  localStorage.setItem('projects', JSON.stringify(projects));
+}
+
+
 // handle appending data into DOM
 function renderProjectData(name, type, hourlyRate, dueDate) {
   // show data in table
@@ -36,8 +61,8 @@ function renderProjectData(name, type, hourlyRate, dueDate) {
   // append into tbody
   projectDisplay.append(tr);
 
-
-
+// Save projects to local storage after rendering
+saveProjectsToLocalStorage();
 
 }
 // handle project deletion
@@ -45,6 +70,9 @@ function handleDeleteProject(e) {
   console.log(e.target);
   const btnClicked = $(e.target);
   btnClicked.closest('tr').remove();
+
+  saveProjectsToLocalStorage();
+
 }
 
 // handleSubmit from modal form
@@ -71,6 +99,8 @@ function handleSubmit(e) {
   projectTypeInput.val('')
   hourlyRateInput.val('')
   dueDateInput.val('')
+
+  saveProjectsToLocalStorage();
 }
 // handle current time display
 currentTime.text(today.format("ddd , MMMM DD YYYY :: h:mm:ss a"))
