@@ -1,5 +1,5 @@
 // select elements from DOM
-const currentTime = $('#current-time')
+const currentTime = $('#currentTime')
 const projectForm = $('#project-form')
 const projectNameInput = $('#project-name-input');
 const projectTypeInput = $('#project-type-input');
@@ -8,7 +8,17 @@ const dueDateInput = $('#due-date-input')
 const projectModal = $('#project-modal')
 const projectDisplay = $('#project-display')
 
-const today = dayjs()
+// Function to update the current time
+function updateCurrentTime() {
+  const today = dayjs();
+  currentTime.text(today.format("ddd , MMMM DD YYYY :: h:mm:ss a"));
+}
+
+// Update the current time initially
+updateCurrentTime();
+
+// Set an interval to update the current time every second
+setInterval(updateCurrentTime, 1000);
 
 // Load existing data from local storage when the page loads
 $(document).ready(function() {

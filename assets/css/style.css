@@ -102,7 +102,7 @@ thead tr th {
   position: relative;
 }
 
-.jumbotron h1, h2, #current-time {
+.jumbotron h1, h2, #currentTime {
   display: flex;
   justify-content: center;
   color: var(--light);
@@ -111,7 +111,7 @@ thead tr th {
   font-size: 1.8rem;
 }
 
-#current-time {
+#currentTime {
   text-transform: unset;
 }
 
