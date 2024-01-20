@@ -9,8 +9,9 @@ const projectModal = $('#project-modal')
 const projectDisplay = $('#project-display')
 
 // Function to update the current time
+let today = dayjs();
 function updateCurrentTime() {
-  const today = dayjs();
+  today = dayjs();
   currentTime.text(today.format("ddd , MMMM DD YYYY :: h:mm:ss a"));
 }
 
@@ -113,7 +114,7 @@ function handleSubmit(e) {
   saveProjectsToLocalStorage();
 }
 // handle current time display
-currentTime.text(today.format("ddd , MMMM DD YYYY :: h:mm:ss a"))
+// currentTime.text(today.format("ddd , MMMM DD YYYY :: h:mm:ss a"))
 
 // datepicker using jqueryUI
 dueDateInput.datepicker({
